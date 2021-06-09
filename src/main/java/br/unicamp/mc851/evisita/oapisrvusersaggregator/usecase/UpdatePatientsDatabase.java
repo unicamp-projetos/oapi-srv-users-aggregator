@@ -1,5 +1,5 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase;
 
-public interface UpdatePacientesDatabase {
+public interface UpdatePatientsDatabase {
     void execute();
 }

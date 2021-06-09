@@ -6,10 +6,10 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AcompanhanteDatabaseResponse {
+public class CompanionDatabaseResponse {
     @NonNull
     private String nome;
     @NonNull
     private Long cpf;
-    private Long rg;
+    private String rg;
 }

@@ -8,18 +8,18 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PacienteDatabaseResponse {
+public class PatientDatabaseResponse {
     @NonNull
     private Long prontuario;
     @NonNull
     private String nome;
-    private String nomeMae;
-    private String nomePai;
+    private String nome_mae;
+    private String nome_pai;
     @NonNull
     private Long cpf;
-    private Long rg;
-    private Long nroCartaoSaude;
+    private String rg;
+    private Long nro_cartao_saude;
     @NonNull
     private String medico;
-    private List<AcompanhanteDatabaseResponse> acompanhantes;
+    private List<CompanionDatabaseResponse> acompanhantes;
 }

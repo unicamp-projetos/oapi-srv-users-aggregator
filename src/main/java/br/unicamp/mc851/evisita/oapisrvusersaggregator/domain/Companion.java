@@ -8,12 +8,12 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Acompanhante {
+public class Companion {
     @NonNull
-    private String nome;
+    private String name;
     @NonNull
     private Long cpf;
-    private Long rg;
+    private String rg;
     @NonNull
-    private List<Long> idPacientes;
+    private List<Long> idPatients;
 }
