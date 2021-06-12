@@ -1,12 +1,12 @@
-package br.unicamp.mc851.evisita.oapisrvusersaggregator.domain;
+package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto;
 
 import lombok.*;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Patient {
+@NoArgsConstructor
+public class SavePatientRequest {
     @NonNull
     private Long medicalRecord;
     @NonNull
@@ -18,5 +18,5 @@ public class Patient {
     private String rg;
     private Long susCardNumber;
     @NonNull
-    private String doctor;
+    private Long doctorId;
 }

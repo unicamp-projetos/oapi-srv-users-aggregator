@@ -3,8 +3,6 @@ package br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.PatientDatabaseResponse;
 
-import java.util.stream.Collectors;
-
 public class PatientDatabaseResponseToPatient {
     private PatientDatabaseResponseToPatient() {}
 
@@ -18,9 +16,6 @@ public class PatientDatabaseResponseToPatient {
                 .doctor(response.getMedico())
                 .medicalRecord(response.getProntuario())
                 .susCardNumber(response.getNro_cartao_saude())
-                .companions(response.getAcompanhantes().stream()
-                    .map(CompanionDatabaseResponseToCompanion::convert)
-                    .collect(Collectors.toList()))
                 .build();
     }
 }
