@@ -1,4 +1,4 @@
-package br.unicamp.mc851.evisita.oapisrvusersaggregator.domain;
+package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto;
 
 import lombok.*;
 
@@ -6,14 +6,14 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Companion {
-    @NonNull
-    private String name;
+@NoArgsConstructor
+public class SaveCompanionRequest {
     @NonNull
     private Long cpf;
     private String rg;
+    @NonNull
+    private String name;
     @NonNull
     private List<Long> patientsId;
 }

@@ -2,7 +2,7 @@ package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.impl;
 
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.PatientToSavePatientRequest;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.SavePatient;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.SavePatientOnClient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.client.OapiSrvPatientsClient;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class SavePatientImpl implements SavePatient {
+public class SavePatientOnClientImpl implements SavePatientOnClient {
 
     private final OapiSrvPatientsClient client;
 

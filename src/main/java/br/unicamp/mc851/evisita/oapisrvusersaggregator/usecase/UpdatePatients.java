@@ -4,6 +4,6 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 
 import java.util.List;
 
-public interface UpdatePatientsDatabase {
+public interface UpdatePatients {
     List<Patient> execute();
 }
