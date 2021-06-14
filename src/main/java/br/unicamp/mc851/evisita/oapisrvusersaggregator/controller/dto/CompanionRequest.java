@@ -1,4 +1,4 @@
-package br.unicamp.mc851.evisita.oapisrvusersaggregator.domain;
+package br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto;
 
 import lombok.*;
 
@@ -6,9 +6,9 @@ import java.util.List;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Companion {
+@NoArgsConstructor
+public class CompanionRequest {
     @NonNull
     private String name;
     @NonNull

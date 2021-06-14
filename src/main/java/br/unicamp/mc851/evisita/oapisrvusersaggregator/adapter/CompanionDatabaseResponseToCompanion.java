@@ -13,7 +13,7 @@ public class CompanionDatabaseResponseToCompanion {
                 .cpf(response.getCpf())
                 .rg(getRg(response.getRg()))
                 .name(response.getNome())
-                .idPatients(new ArrayList<>())
+                .patientsId(new ArrayList<>())
                 .build();
     }
 

@@ -1,6 +1,6 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.controller;
 
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.UpdatePatientsDatabase;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.UpdatePatients;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "patients/v1", produces = MediaType.APPLICATION_JSON_VALUE)
 @Slf4j
 public class PatientsController {
-    private final UpdatePatientsDatabase updatePatientsDatabase;
+    private final UpdatePatients updatePatients;
 
     @GetMapping("/update")
     public ResponseEntity<Object> updateDatabase() {
-        updatePatientsDatabase.execute();
+        updatePatients.execute();
         log.info("Patients updated successfully.");
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
