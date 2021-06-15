@@ -20,7 +20,6 @@ public class SavePatientOnClientImpl implements SavePatientOnClient {
     public Patient execute(Patient patient) {
         try {
             client.execute(PatientToSavePatientRequest.convert(patient));
-            log.info("Patient {} registered successfully.", patient.getName());
             return patient;
         } catch (FeignException e) {
             log.info("Patient {} was not registered.", patient.getName());

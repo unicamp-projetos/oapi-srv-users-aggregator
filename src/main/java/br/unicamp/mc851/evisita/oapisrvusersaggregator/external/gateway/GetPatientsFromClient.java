@@ -1,9 +1,9 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway;
 
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.PatientDatabaseResponse;
 
 import java.util.List;
 
 public interface GetPatientsFromClient {
-    List<Patient> execute();
+    List<PatientDatabaseResponse> execute();
 }
