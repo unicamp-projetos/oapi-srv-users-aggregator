@@ -1,8 +1,10 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.impl;
 
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.PatientDatabaseResponseToPatient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.GetPatientsFromClient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.SavePatientOnClient;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.PatientDatabaseResponse;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.UpdatePatients;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,13 +18,12 @@ import java.util.stream.Collectors;
 @Slf4j
 public class UpdatePatientsImpl implements UpdatePatients {
 
-    private final GetPatientsFromClient getPatientsFromClient;
     private final SavePatientOnClient savePatientOnClient;
 
     @Override
-    public List<Patient> execute() {
-        var patients = getPatientsFromClient.execute();
-        return patients.stream()
+    public List<Patient> execute(List<PatientDatabaseResponse> patientDatabaseResponses) {
+        return patientDatabaseResponses.stream()
+                .map(PatientDatabaseResponseToPatient::convert)
                 .filter(p -> savePatientOnClient.execute(p) != null)
                 .collect(Collectors.toList());
     }
