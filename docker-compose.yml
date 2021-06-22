@@ -1,0 +1,32 @@
+version: '3.3'
+services:
+  mock:
+    build:
+      dockerfile: ./mock/mock.dockerfile
+      context: .
+    ports:
+      - '8080:8080'
+    networks:
+      - evisita-network
+    volumes:
+      - ./mock:/home/wiremock
+    container_name: evisita/mock
+    image: evisita/mock
+
+  oapi-srv-users-aggregator:
+    build:
+      dockerfile: ./docker/srv.dockerfile
+      context: .
+    image: evisita/oapi-srv-users-aggregator
+    container_name: evisita/oapisrvusersaggregator
+    ports:
+      - '8082:8080'
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    networks:
+      - evisita-network
+    depends_on:
+      - mock
+networks:
+  evisita-network:
+    driver: bridge

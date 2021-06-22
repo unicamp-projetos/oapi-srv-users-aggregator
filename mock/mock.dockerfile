@@ -1,0 +1,1 @@
+FROM rodolpheche/wiremock
