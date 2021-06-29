@@ -15,5 +15,7 @@ public class SavePatientResponse {
     private String rg;
     @NonNull
     private Long doctorId;
-
+    private String functionalUnit;
+    private String bed;
+    private String room;
 }

@@ -1,13 +1,13 @@
 {
     "request": {
-        "method": "GET",
-        "url": "/pacientes"
+      "method": "GET",
+      "url": "/patients"
     },
     "response": {
-        "status": 200,
-        "bodyFileName": "pacientes.json",
-	"headers": {
-		"Content-Type": "application/json"
-	}
+      "status": 200,
+      "bodyFileName": "patients.json",
+	  "headers": {
+	  	"Content-Type": "application/json"
+	  }
     }
 }

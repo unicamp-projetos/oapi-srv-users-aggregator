@@ -3,9 +3,9 @@ package br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.SaveCompanionRequest;
 
-public class CompanionToSaveCompanionRequest {
+public class SaveCompanionRequestAdapter {
 
-    private CompanionToSaveCompanionRequest() {}
+    private SaveCompanionRequestAdapter() {}
 
     public static SaveCompanionRequest convert(Companion companion) {
         return SaveCompanionRequest.builder()

@@ -5,12 +5,12 @@ services:
       dockerfile: ./mock/mock.dockerfile
       context: .
     ports:
-      - '8080:8080'
+      - '8198:8080'
     networks:
       - evisita-network
     volumes:
       - ./mock:/home/wiremock
-    container_name: evisita/mock
+    container_name: evisita-mock
     image: evisita/mock
 
   oapi-srv-users-aggregator:
@@ -18,7 +18,7 @@ services:
       dockerfile: ./docker/srv.dockerfile
       context: .
     image: evisita/oapi-srv-users-aggregator
-    container_name: evisita/oapisrvusersaggregator
+    container_name: evisita-oapisrvusersaggregator
     ports:
       - '8082:8080'
     environment:

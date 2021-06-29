@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-@FeignClient(name = "patients", url = "http://localhost:8090/pacientes")
+@FeignClient(name = "hc-client", url = "${patients.mock.url}")
 public interface HCClient {
-    @GetMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/patients", consumes = MediaType.APPLICATION_JSON_VALUE)
     List<PatientDatabaseResponse> execute();
 }

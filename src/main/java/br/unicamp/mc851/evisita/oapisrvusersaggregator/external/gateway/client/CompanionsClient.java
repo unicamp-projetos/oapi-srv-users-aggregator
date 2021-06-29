@@ -6,8 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "oapi-srv-companions", url = "${oapi.srv.companions}/companion")
-public interface OapiSrvCompanionsClient {
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public SaveCompanionResponse execute(SaveCompanionRequest request);
+@FeignClient(name = "oapi-srv-companions", url = "${oapi.srv.companions}")
+public interface CompanionsClient {
+    @PostMapping(value = "/companion",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    SaveCompanionResponse execute(SaveCompanionRequest request);
 }

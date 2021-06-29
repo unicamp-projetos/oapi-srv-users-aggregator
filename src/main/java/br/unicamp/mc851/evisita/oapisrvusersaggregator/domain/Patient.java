@@ -7,16 +7,15 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Patient {
-    @NonNull
     private Long medicalRecord;
-    @NonNull
     private String name;
     private String motherName;
     private String fatherName;
-    @NonNull
     private Long cpf;
     private String rg;
     private Long susCardNumber;
-    @NonNull
     private String doctor;
+    private String functionalUnit;
+    private String bed;
+    private String room;
 }
