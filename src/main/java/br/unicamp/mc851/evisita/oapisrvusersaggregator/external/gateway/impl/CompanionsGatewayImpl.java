@@ -1,11 +1,11 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.impl;
 
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.CompanionToSaveCompanionRequest;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.SaveCompanionResponseToCompanionResponse;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.SaveCompanionRequestAdapter;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.CompanionResponseAdapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto.CompanionResponse;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.SaveCompanionOnClient;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.client.OapiSrvCompanionsClient;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.CompanionsGateway;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.client.CompanionsClient;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,15 +14,15 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class SaveCompanionOnClientImpl implements SaveCompanionOnClient {
+public class CompanionsGatewayImpl implements CompanionsGateway {
 
-    private final OapiSrvCompanionsClient client;
+    private final CompanionsClient client;
 
     @Override
     public CompanionResponse execute(Companion companion) {
         try {
-            return SaveCompanionResponseToCompanionResponse.convert(
-                    client.execute(CompanionToSaveCompanionRequest.convert(companion)));
+            return CompanionResponseAdapter.convert(
+                    client.execute(SaveCompanionRequestAdapter.convert(companion)));
         } catch (FeignException e) {
             log.info("Companion {} was not registered on database.", companion.getName());
             return null;

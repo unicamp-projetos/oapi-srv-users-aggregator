@@ -4,6 +4,6 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.Pati
 
 import java.util.List;
 
-public interface GetPatientsFromClient {
+public interface HCClientGateway {
     List<PatientDatabaseResponse> execute();
 }

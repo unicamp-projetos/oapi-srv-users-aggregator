@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "patients/v1", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "users-aggregator/v1", produces = MediaType.APPLICATION_JSON_VALUE)
 @Slf4j
 public class PatientsController {
     private final SyncDatabase syncDatabase;

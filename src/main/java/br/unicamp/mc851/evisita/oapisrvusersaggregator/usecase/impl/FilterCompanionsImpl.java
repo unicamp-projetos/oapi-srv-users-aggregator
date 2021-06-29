@@ -1,6 +1,6 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.impl;
 
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.PatientDatabaseResponseToCompanion;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.CompanionAdapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.PatientDatabaseResponse;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.FilterCompanions;
@@ -16,9 +16,9 @@ public class FilterCompanionsImpl implements FilterCompanions {
             Set<Long> patientsId) {
         List<Companion> companions = new ArrayList<>();
         patientDatabaseResponses.stream()
-                .filter(pDR -> patientsId.contains(pDR.getProntuario()))
+                .filter(pDR -> patientsId.contains(pDR.getMedicalRecord()))
                 .forEach(pDR -> {
-                    companions.addAll(PatientDatabaseResponseToCompanion.convert(pDR));
+                    companions.addAll(CompanionAdapter.convert(pDR));
                 });
         return combinePatientsIds(companions);
     }

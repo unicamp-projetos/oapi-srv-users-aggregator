@@ -17,6 +17,8 @@ public class SavePatientRequest {
     private Long cpf;
     private String rg;
     private Long susCardNumber;
-    @NonNull
-    private Long doctorId;
+    private @NonNull String doctor;
+    private String functionalUnit;
+    private String bed;
+    private String room;
 }

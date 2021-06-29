@@ -6,8 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@FeignClient(name = "oapi-srv-patients", url = "http://localhost:8080/patients/v1/patient")
-public interface OapiSrvPatientsClient {
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+@FeignClient(name = "oapi-srv-patients", url = "${oapi.srv.patients}")
+public interface PatientsClient {
+    @PostMapping(value = "/patient",
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
     SavePatientResponse execute(SavePatientRequest request);
 }
