@@ -4,23 +4,15 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto.CompanionR
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.CompanionDatabaseResponse;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.PatientDatabaseResponse;
+import lombok.experimental.UtilityClass;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CompanionAdapter {
-    private CompanionAdapter() {}
+import static java.util.Arrays.asList;
 
-    public static Companion convert(CompanionDatabaseResponse response) {
-        return Companion.builder()
-                .cpf(response.getCpf())
-                .rg(getRg(response.getRg()))
-                .name(response.getName())
-                .patientsId(new ArrayList<>())
-                .build();
-    }
+@UtilityClass
+public class CompanionAdapter {
 
     private static String getRg(String rg) {
         return (rg == null) ? "":rg;
@@ -31,7 +23,9 @@ public class CompanionAdapter {
                 .cpf(response.getCpf())
                 .rg(getRg(response.getRg()))
                 .name(response.getName())
-                .patientsId(Arrays.asList(patientId))
+                .patientsId(asList(patientId))
+                .isVisiting(response.getIsVisiting())
+                .arrivalTime(response.getArrivalTime())
                 .build();
     }
 
@@ -41,6 +35,8 @@ public class CompanionAdapter {
                 .cpf(request.getCpf())
                 .rg(request.getRg())
                 .patientsId(request.getPatientsId())
+                .isVisiting(request.getIsVisiting())
+                .arrivalTime(request.getArrivalTime())
                 .build();
     }
 

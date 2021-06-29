@@ -14,15 +14,21 @@
     "acompanhantes": [
       {
         "nome": "GABRIEL LAURA ELZA",
-        "cpf": 12345678900
+        "cpf": 12345678900,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "RAFAEL WILIAN ELZA",
-        "cpf": 12345678901
+        "cpf": 12345678901,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "AMANDA ANA ELZA",
-        "cpf": 12345678902
+        "cpf": 12345678902,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -41,15 +47,21 @@
     "acompanhantes": [
       {
         "nome": "CAMILA MARCEL HATTORI",
-        "cpf": 12345678903
+        "cpf": 12345678903,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "EDMUNDO JULIANO HATTORI",
-        "cpf": 12345678904
+        "cpf": 12345678904,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "GEILA CELIA HATTORI",
-        "cpf": 12345678905
+        "cpf": 12345678905,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -68,15 +80,21 @@
     "acompanhantes": [
       {
         "nome": "MARCELLA DANIEL ANDRE",
-        "cpf": 12345678906
+        "cpf": 12345678906,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "REINALDO INT-TESTE ANDRE",
-        "cpf": 12345678907
+        "cpf": 12345678907,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "ERIKA MARIA ANDRE",
-        "cpf": 12345678908
+        "cpf": 12345678908,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -95,15 +113,21 @@
     "acompanhantes": [
       {
         "nome": "ADRIANA ROBERTO ASSIS",
-        "cpf": 12345678909
+        "cpf": 12345678909,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "VINICIUS MATHEUS ASSIS",
-        "cpf": 12345678910
+        "cpf": 12345678910,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "ANDRE MARIANA ASSIS",
-        "cpf": 12345678911
+        "cpf": 12345678911,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -122,15 +146,21 @@
     "acompanhantes": [
       {
         "nome": "ANDRESSA INGRID DONIZETH",
-        "cpf": 12345678912
+        "cpf": 12345678912,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "FELIPE PRISCILLA DONIZETH",
-        "cpf": 12345678913
+        "cpf": 12345678913,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "BRUNA RICARDO DONIZETH",
-        "cpf": 12345678914
+        "cpf": 12345678914,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -149,15 +179,21 @@
     "acompanhantes": [
       {
         "nome": "NATALIA MELINA TROMBETTA",
-        "cpf": 12345678915
+        "cpf": 12345678915,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "NATALIA MELINA TROMBETTA",
-        "cpf": 12345678916
+        "cpf": 12345678916,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "MAX JOAN TROMBETTA",
-        "cpf": 12345678917
+        "cpf": 12345678917,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -176,15 +212,21 @@
     "acompanhantes": [
       {
         "nome": "BEATRIZ BIANCA SOFIA",
-        "cpf": 12345678918
+        "cpf": 12345678918,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "ROSIANI MARCIO SOFIA",
-        "cpf": 12345678919
+        "cpf": 12345678919,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "SARAH JOSE SOFIA",
-        "cpf": 12345678920
+        "cpf": 12345678920,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -231,15 +273,21 @@
     "acompanhantes": [
       {
         "nome": "MARCIO REGINA GABRIEL",
-        "cpf": 12345678921
+        "cpf": 12345678921,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "EDSON FABIANA GABRIEL",
-        "cpf": 12345678922
+        "cpf": 12345678922,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "DIOGO HENRIQUE GABRIEL",
-        "cpf": 12345678923
+        "cpf": 12345678923,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   },
@@ -258,15 +306,21 @@
     "acompanhantes": [
       {
         "nome": "ANTONIO NELMA GIACOIA",
-        "cpf": 12345678924
+        "cpf": 12345678924,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "STEFANIE FELIPE GIACOIA",
-        "cpf": 12345678925
+        "cpf": 12345678925,
+        "hora_de_chegada": null,
+        "visitando": false
       },
       {
         "nome": "ALINE ERIC GIACOIA",
-        "cpf": 12345678926
+        "cpf": 12345678926,
+        "hora_de_chegada": null,
+        "visitando": false
       }
     ]
   }

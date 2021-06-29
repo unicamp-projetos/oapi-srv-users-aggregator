@@ -1,6 +1,8 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.controller;
 
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.SyncDatabase;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,6 +20,8 @@ public class PatientsController {
     private final SyncDatabase syncDatabase;
 
     @GetMapping("/update")
+    @ApiOperation("Update database according to external API")
+    @ApiResponse(code = 201, message = "Database updated successfully")
     public ResponseEntity<Object> updateDatabase() {
         syncDatabase.execute();
         log.info("Database wad synced successfully.");
