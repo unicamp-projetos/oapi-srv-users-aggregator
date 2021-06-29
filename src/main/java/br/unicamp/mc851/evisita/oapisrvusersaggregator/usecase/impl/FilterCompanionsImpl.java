@@ -11,15 +11,12 @@ import java.util.*;
 @Service
 public class FilterCompanionsImpl implements FilterCompanions {
     @Override
-    public List<Companion> execute(
-            List<PatientDatabaseResponse> patientDatabaseResponses,
-            Set<Long> patientsId) {
+    public List<Companion> execute(List<PatientDatabaseResponse> patientDatabaseResponses,
+                                   Set<Long> patientsId) {
         List<Companion> companions = new ArrayList<>();
         patientDatabaseResponses.stream()
                 .filter(pDR -> patientsId.contains(pDR.getMedicalRecord()))
-                .forEach(pDR -> {
-                    companions.addAll(CompanionAdapter.convert(pDR));
-                });
+                .forEach(pDR -> companions.addAll(CompanionAdapter.convert(pDR)));
         return combinePatientsIds(companions);
     }
 

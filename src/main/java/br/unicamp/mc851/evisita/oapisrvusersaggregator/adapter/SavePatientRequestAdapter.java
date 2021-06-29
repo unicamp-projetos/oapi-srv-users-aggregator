@@ -2,9 +2,10 @@ package br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter;
 
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.SavePatientRequest;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class SavePatientRequestAdapter {
-    private SavePatientRequestAdapter() {}
 
     public static SavePatientRequest convert(Patient patient) {
         return SavePatientRequest.builder()
@@ -16,6 +17,9 @@ public class SavePatientRequestAdapter {
                 .motherName(patient.getMotherName())
                 .name(patient.getName())
                 .rg(patient.getRg())
+                .bed(patient.getBed())
+                .room(patient.getRoom())
+                .functionalUnit(patient.getFunctionalUnit())
                 .build();
     }
 }

@@ -1,5 +1,6 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.impl;
 
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.HCClientGateway;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.FilterCompanions;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.SyncDatabase;
@@ -16,14 +17,14 @@ public class SyncDatabaseImpl implements SyncDatabase {
 
     private final FilterCompanions filterCompanions;
     private final UpdatePatients updatePatients;
-    private final HCClientGateway HCClientGateway;
+    private final HCClientGateway hcClientGateway;
     private final UpdateCompanions updateCompanions;
 
     @Override
     public void execute() {
-        var databaseResponseList = HCClientGateway.execute();
+        var databaseResponseList = hcClientGateway.execute();
         var medicalRecords = updatePatients.execute(databaseResponseList).stream()
-                .map(p -> p.getMedicalRecord())
+                .map(Patient::getMedicalRecord)
                 .collect(Collectors.toSet());
         updateCompanions.execute(filterCompanions.execute(databaseResponseList, medicalRecords));
     }
