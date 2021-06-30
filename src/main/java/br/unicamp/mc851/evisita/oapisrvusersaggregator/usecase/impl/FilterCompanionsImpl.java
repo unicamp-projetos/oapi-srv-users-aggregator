@@ -12,7 +12,7 @@ import java.util.*;
 public class FilterCompanionsImpl implements FilterCompanions {
     @Override
     public List<Companion> execute(List<PatientDatabaseResponse> patientDatabaseResponses,
-                                   Set<Long> patientsId) {
+                                   Set<String> patientsId) {
         List<Companion> companions = new ArrayList<>();
         patientDatabaseResponses.stream()
                 .filter(pDR -> patientsId.contains(pDR.getMedicalRecord()))
@@ -21,7 +21,7 @@ public class FilterCompanionsImpl implements FilterCompanions {
     }
 
     private List<Companion> combinePatientsIds(List<Companion> companions) {
-        Map<Long, Integer> uniqueCompanion = new HashMap<>();
+        Map<String, Integer> uniqueCompanion = new HashMap<>();
         List<Integer> removeIndexes = new ArrayList<>();
         for (int i = 0; i < companions.size(); i++) {
             Integer prevIndex = uniqueCompanion.putIfAbsent(companions.get(i).getCpf(), i);

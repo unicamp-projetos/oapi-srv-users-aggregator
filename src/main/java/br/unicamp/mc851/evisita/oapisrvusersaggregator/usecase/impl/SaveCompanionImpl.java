@@ -16,6 +16,6 @@ public class SaveCompanionImpl implements SaveCompanion {
 
     @Override
     public CompanionResponse execute(CompanionRequest request) {
-        return companionsGateway.execute(CompanionAdapter.convert(request));
+        return companionsGateway.saveCompanionOnClient(CompanionAdapter.convert(request));
     }
 }

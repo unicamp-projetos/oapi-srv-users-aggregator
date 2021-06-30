@@ -4,5 +4,8 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto.CompanionR
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
 
 public interface CompanionsGateway {
-    CompanionResponse execute(Companion companion);
+
+    CompanionResponse saveCompanionOnClient(Companion companion);
+
+    CompanionResponse getCompanion(String cpf);
 }

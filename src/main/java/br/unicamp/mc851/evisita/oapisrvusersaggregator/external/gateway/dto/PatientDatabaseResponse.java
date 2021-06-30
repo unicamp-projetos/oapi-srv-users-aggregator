@@ -13,7 +13,7 @@ import java.util.List;
 public class PatientDatabaseResponse {
     @NonNull
     @JsonProperty("prontuario")
-    private Long medicalRecord;
+    private String medicalRecord;
     @NonNull
     @JsonProperty("nome")
     private String name;
@@ -22,10 +22,10 @@ public class PatientDatabaseResponse {
     @JsonProperty("nome_pai")
     private String fatherName;
     @NonNull
-    private Long cpf;
+    private String cpf;
     private String rg;
     @JsonProperty("nro_cartao_saude")
-    private Long susCardNumber;
+    private String susCardNumber;
     @NonNull
     @JsonProperty("medico")
     private String doctor;

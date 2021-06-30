@@ -19,13 +19,18 @@ public class CompanionsGatewayImpl implements CompanionsGateway {
     private final CompanionsClient client;
 
     @Override
-    public CompanionResponse execute(Companion companion) {
+    public CompanionResponse saveCompanionOnClient(Companion companion) {
         try {
             return CompanionResponseAdapter.convert(
-                    client.execute(SaveCompanionRequestAdapter.convert(companion)));
+                    client.save(SaveCompanionRequestAdapter.convert(companion)));
         } catch (FeignException e) {
             log.info("Companion {} was not registered on database.", companion.getName());
             return null;
         }
+    }
+
+    @Override
+    public CompanionResponse getCompanion(String cpf) {
+        return CompanionResponseAdapter.convert(client.retrieve(cpf));
     }
 }

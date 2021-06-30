@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Builder
@@ -14,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 public class CompanionResponse {
     private String name;
+    private String cpf;
     private LocalDateTime arrivalTime;
     private Boolean isVisiting;
 }
