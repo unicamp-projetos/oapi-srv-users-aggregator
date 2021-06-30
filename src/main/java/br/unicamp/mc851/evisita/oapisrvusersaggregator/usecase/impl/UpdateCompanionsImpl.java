@@ -16,6 +16,6 @@ public class UpdateCompanionsImpl implements UpdateCompanions {
 
     @Override
     public void execute(List<Companion> companions) {
-        companions.forEach(companionsGateway::execute);
+        companions.forEach(companionsGateway::saveCompanionOnClient);
     }
 }

@@ -11,9 +11,9 @@ import java.util.List;
 @AllArgsConstructor
 public class Companion {
     private String name;
-    private Long cpf;
+    private String cpf;
     private String rg;
-    private List<Long> patientsId;
+    private List<String> patientsId;
     private LocalDateTime arrivalTime;
     private Boolean isVisiting;
 }

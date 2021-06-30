@@ -13,8 +13,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaveCompanionResponse {
-    private List<Long> patientsId;
+    private List<String> patientsId;
     private String name;
     private Boolean isVisiting;
     private LocalDateTime arrivalTime;
+    private String cpf;
 }

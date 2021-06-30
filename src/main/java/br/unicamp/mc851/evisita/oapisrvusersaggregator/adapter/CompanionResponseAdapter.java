@@ -13,6 +13,7 @@ public class CompanionResponseAdapter {
                 .name(response.getName())
                 .isVisiting(response.getIsVisiting())
                 .arrivalTime(response.getArrivalTime())
+                .cpf(response.getCpf())
                 .build();
     }
 
@@ -21,6 +22,7 @@ public class CompanionResponseAdapter {
                 .name(companion.getName())
                 .isVisiting(companion.getIsVisiting())
                 .arrivalTime(companion.getArrivalTime())
+                .cpf(companion.getCpf())
                 .build();
     }
 }

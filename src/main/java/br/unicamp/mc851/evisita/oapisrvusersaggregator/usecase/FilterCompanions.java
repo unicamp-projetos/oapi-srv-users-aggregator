@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.Set;
 
 public interface FilterCompanions {
-    List<Companion> execute(List<PatientDatabaseResponse> patientDatabaseResponses, Set<Long> patientsId);
+    List<Companion> execute(List<PatientDatabaseResponse> patientDatabaseResponses, Set<String> patientsId);
 }

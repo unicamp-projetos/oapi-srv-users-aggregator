@@ -11,12 +11,12 @@ import java.util.List;
 @NoArgsConstructor
 public class SaveCompanionRequest {
     @NonNull
-    private Long cpf;
+    private String cpf;
     private String rg;
     @NonNull
     private String name;
     @NonNull
-    private List<Long> patientsId;
+    private List<String> patientsId;
     private LocalDateTime arrivalTime;
     @NonNull
     private Boolean isVisiting;

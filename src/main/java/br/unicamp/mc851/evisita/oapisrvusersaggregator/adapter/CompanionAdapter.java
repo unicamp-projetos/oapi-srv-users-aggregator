@@ -18,7 +18,7 @@ public class CompanionAdapter {
         return (rg == null) ? "":rg;
     }
 
-    public static Companion convert(CompanionDatabaseResponse response, Long patientId) {
+    public static Companion convert(CompanionDatabaseResponse response, String patientId) {
         return Companion.builder()
                 .cpf(response.getCpf())
                 .rg(getRg(response.getRg()))

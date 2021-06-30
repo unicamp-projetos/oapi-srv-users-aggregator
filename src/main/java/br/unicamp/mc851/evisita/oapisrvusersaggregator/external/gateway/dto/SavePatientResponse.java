@@ -8,10 +8,10 @@ import lombok.*;
 @AllArgsConstructor
 public class SavePatientResponse {
     @NonNull
-    private Long medicalRecord;
+    private String medicalRecord;
     private String name;
     @NonNull
-    private Long cpf;
+    private String cpf;
     private String rg;
     @NonNull
     private Long doctorId;

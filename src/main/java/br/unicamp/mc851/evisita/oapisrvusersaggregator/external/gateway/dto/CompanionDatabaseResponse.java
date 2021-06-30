@@ -14,7 +14,7 @@ public class CompanionDatabaseResponse {
     @JsonProperty("nome")
     private String name;
     @NonNull
-    private Long cpf;
+    private String cpf;
     private String rg;
     @JsonProperty("hora_de_chegada")
     private LocalDateTime arrivalTime;

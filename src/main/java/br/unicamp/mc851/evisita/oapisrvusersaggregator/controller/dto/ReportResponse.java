@@ -1,23 +1,20 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class CompanionRequest {
-    @NonNull
-    private String name;
-    @NonNull
+@AllArgsConstructor
+public class ReportResponse {
+    private String companionName;
     private String cpf;
-    private String rg;
-    @NonNull
-    private List<String> patientsId;
     private LocalDateTime arrivalTime;
-    @NonNull
+    private LocalDateTime exitTime;
     private Boolean isVisiting;
 }
