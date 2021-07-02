@@ -26,7 +26,7 @@ public class FilterCompanionsImpl implements FilterCompanions {
         for (int i = 0; i < companions.size(); i++) {
             Integer prevIndex = uniqueCompanion.putIfAbsent(companions.get(i).getCpf(), i);
             if (prevIndex != null) {
-                companions.get(prevIndex).getPatientsId().addAll(companions.get(i).getPatientsId());
+                companions.get(prevIndex).getVisitInfo().addAll(companions.get(i).getVisitInfo());
                 removeIndexes.add(i);
             }
         }

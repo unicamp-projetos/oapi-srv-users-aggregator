@@ -5,6 +5,6 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto.Pati
 
 import java.util.List;
 
-public interface UpdatePatients {
+public interface SavePatientsOnDatabase {
     List<Patient> execute(List<PatientDatabaseResponse> patientDatabaseResponses);
 }

@@ -7,6 +7,7 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.client.P
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,13 +18,18 @@ public class PatientsGatewayImpl implements PatientsGateway {
     private final PatientsClient client;
 
     @Override
-    public Patient execute(Patient patient) {
+    public Patient savePatient(Patient patient) {
         try {
-            client.execute(SavePatientRequestAdapter.convert(patient));
+            client.savePatient(SavePatientRequestAdapter.convert(patient));
             return patient;
         } catch (FeignException e) {
             log.info("Patient {} was not registered.", patient.getName());
             return null;
         }
+    }
+
+    @Override
+    public ResponseEntity<Object> getPatientByMedicalRecord(String medicalRecord) {
+        return client.getPatientByMedicalRecord(medicalRecord);
     }
 }

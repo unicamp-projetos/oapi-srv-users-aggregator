@@ -1,7 +1,7 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.impl;
 
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.SaveCompanionRequestAdapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.CompanionResponseAdapter;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.SaveCompanionRequestAdapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto.CompanionResponse;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Companion;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.CompanionsGateway;
@@ -9,6 +9,7 @@ import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.client.C
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,5 +33,10 @@ public class CompanionsGatewayImpl implements CompanionsGateway {
     @Override
     public CompanionResponse getCompanion(String cpf) {
         return CompanionResponseAdapter.convert(client.retrieve(cpf));
+    }
+
+    @Override
+    public ResponseEntity<Object> updateCompanion(Companion companion) {
+        return client.updateCompanion(SaveCompanionRequestAdapter.convert(companion));
     }
 }

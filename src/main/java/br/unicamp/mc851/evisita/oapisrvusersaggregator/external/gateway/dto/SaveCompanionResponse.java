@@ -1,11 +1,11 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.dto;
 
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.VisitInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -13,9 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaveCompanionResponse {
-    private List<String> patientsId;
+    private List<VisitInfo> visitInfo;
     private String name;
-    private Boolean isVisiting;
-    private LocalDateTime arrivalTime;
     private String cpf;
 }

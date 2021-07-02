@@ -1,8 +1,8 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.controller.dto;
 
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.VisitInfo;
 import lombok.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -16,8 +16,5 @@ public class CompanionRequest {
     private String cpf;
     private String rg;
     @NonNull
-    private List<String> patientsId;
-    private LocalDateTime arrivalTime;
-    @NonNull
-    private Boolean isVisiting;
+    private List<VisitInfo> visitInfo;
 }

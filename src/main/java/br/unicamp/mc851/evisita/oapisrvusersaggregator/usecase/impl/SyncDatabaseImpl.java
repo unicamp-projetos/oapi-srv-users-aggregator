@@ -1,11 +1,12 @@
 package br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.impl;
 
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.adapter.CompanionRequestAdapter;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.domain.Patient;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.external.gateway.HCClientGateway;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.FilterCompanions;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.SaveCompanion;
+import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.SavePatientsOnDatabase;
 import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.SyncDatabase;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.UpdateCompanions;
-import br.unicamp.mc851.evisita.oapisrvusersaggregator.usecase.UpdatePatients;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,16 +17,19 @@ import java.util.stream.Collectors;
 public class SyncDatabaseImpl implements SyncDatabase {
 
     private final FilterCompanions filterCompanions;
-    private final UpdatePatients updatePatients;
+    private final SavePatientsOnDatabase savePatientsOnDatabase;
     private final HCClientGateway hcClientGateway;
-    private final UpdateCompanions updateCompanions;
+    private final SaveCompanion saveCompanion;
 
     @Override
     public void execute() {
         var databaseResponseList = hcClientGateway.execute();
-        var medicalRecords = updatePatients.execute(databaseResponseList).stream()
+        var medicalRecords = savePatientsOnDatabase.execute(databaseResponseList).stream()
                 .map(Patient::getMedicalRecord)
                 .collect(Collectors.toSet());
-        updateCompanions.execute(filterCompanions.execute(databaseResponseList, medicalRecords));
+        filterCompanions.execute(databaseResponseList, medicalRecords)
+                .parallelStream()
+                .map(CompanionRequestAdapter::convert)
+                .map(saveCompanion::execute);
     }
 }
